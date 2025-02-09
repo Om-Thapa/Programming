@@ -95,7 +95,7 @@ int main() {
                     break;
                 }
                 if(S->top==S->capacity-1){
-                    printf("Stacl Overflow \n")
+                    printf("Stacl Overflow \n");
                     break;
                 }
                 printf("b. Enter element to insert: \n");
