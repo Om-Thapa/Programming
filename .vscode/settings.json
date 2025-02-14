@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "vector": "c",
+        "array": "c",
+        "initializer_list": "c",
+        "utility": "c"
+    }
+}
