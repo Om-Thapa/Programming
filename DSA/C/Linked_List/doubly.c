@@ -81,8 +81,13 @@ void deleteFromTop(){
         curr=curr->next;
     }
 
+    if( curr == head ){
+        head = NULL;
+     }else {
+        curr->prev->next=NULL;
+    }
+
     size--;
-    curr->prev->next=NULL;
     free(curr);
 
 }
@@ -91,11 +96,26 @@ void treverse(){
 
     struct node *curr = head;
 
-    while(curr!=0){
+    while(curr!=NULL){
         printf("%d ",curr->info);
         curr=curr->next;
     }
 
+    printf("\n");
+
+}
+
+void revTraverse(){
+
+    struct node *curr = head;
+    while( curr->next != NULL ){
+        curr=curr->next;
+    }
+
+    while( curr!= NULL){
+        printf("%d ",curr->info);
+        curr=curr->prev;
+    }
     printf("\n");
 
 }
@@ -109,66 +129,98 @@ void main(){
     printf("d. To Insert at the K position\n");
     printf("e. To delete from top\n");
     printf("f. To print all node information\n");
-    printf("g. Exit\n");
+    printf("g. To print all node information in Reversed order\n");
+    printf("h. Exit\n");
     
     char ch;
     scanf(" %c",&ch);
     
-    while(ch!='g'){
+    while(ch!='h'){
 
         int i;
         switch (ch){
 
-        case 'a':
-            printf("a.Enter info and capacity : \n");
-            int c;
-            scanf("%d%d",&i,&c);
-            createList( c, i );
-            printf("Creating List......\n");
-            sleep(1);
-            break;
-        
-        case 'b':
-            printf("b. Enter info : \n");
-            scanf("%d",&i);
-            insertAtTop( i );
-            printf("Inserting..........\n");
-            sleep(1);
-            break;
+            case 'a':
+                printf("a.Enter info and capacity : \n");
+                int c;
+                scanf("%d%d",&i,&c);
+                createList( c, i );
+                printf("Creating List......\n");
+                sleep(1);
+                break;
+            
+            case 'b':
+                if( size == capacity-1 ){
+                    printf("List Overflow\n");
+                    sleep(1);
+                    break;
+                }
+                printf("b. Enter info : \n");
+                scanf("%d",&i);
+                insertAtTop( i );
+                printf("Inserting..........\n");
+                sleep(1);
+                break;
+                
+            case 'c':
+                if( size == capacity-1 ){
+                    printf("List Overflow\n");
+                    sleep(1);
+                    break;
+                }
+                printf("b. Enter info : \n");
+                scanf("%d",&i);
+                insertAtHead( i );
+                printf("Inserting..........\n");
+                sleep(1);
+                break;
+                
+            case 'd':
+                if( size == capacity-1 ){
+                    printf("List Overflow\n");
+                    sleep(1);
+                    break;
+                }
+                printf("b. Enter info and k postion : \n");
+                int k;
+                scanf("%d%d",&i,&k);
+                insertAtK( k, i );
+                printf("Inserting..........\n");
+                sleep(1);
+                break;
 
-        case 'c':
-            printf("b. Enter info : \n");
-            scanf("%d",&i);
-            insertAtHead( i );
-            printf("Inserting..........\n");
-            sleep(1);
-            break;
+            case 'e':
+                if( head == NULL){
+                    printf("Underflow\n");
+                    sleep(1);
+                    break;
+                }
+                deleteFromTop();
+                printf("Deleting..........\n");
+                sleep(1);
+                break;
+                
+            case 'f':
+                treverse();
+                printf("Traversed..........\n");
+                sleep(1);
+                break;
+                
+            case 'g':
+                if( head == NULL){
+                    printf("Underflow\n");
+                    sleep(1);
+                    break;
+                }
+                revTraverse();
+                printf("Traversed..........\n");
+                sleep(1);
+                break;
 
-        case 'd':
-            printf("b. Enter info and k postion : \n");
-            int k;
-            scanf("%d%d",&i,&k);
-            insertAtK( k, i );
-            printf("Inserting..........\n");
-            sleep(1);
-            break;
-
-        case 'e':
-            deleteFromTop();
-            printf("Deleting..........\n");
-            sleep(1);
-            break;
-
-        case 'f':
-            treverse();
-            printf("Traversed..........\n");
-            sleep(1);
-            break;
-
-        default:
-            printf("Invalid Input \n");
-            sleep(1);
-            break;
+            default:
+                printf("Invalid Input \n");
+                sleep(1);
+                break;
         }
         
         printf("Given Menu :\n");
@@ -178,7 +230,8 @@ void main(){
         printf("d. To Insert at the K position\n");
         printf("e. To delete from top\n");
         printf("f. To print all node information\n");
-        printf("g. Exit\n");
+        printf("g. To print all node information in Reversed order\n");
+        printf("h. Exit\n");
         scanf(" %c",&ch);
 
     }
