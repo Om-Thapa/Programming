@@ -17,3 +17,13 @@ def func2():
     return var1
 print(func2())
 print(var1)
+
+#Recursion
+def fibo(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return fibo(n-1) + fibo(n-2)
+print('0 ',end='')
+for i in range(20):
+    print(fibo(i),end=' ')
