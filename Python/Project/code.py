@@ -21,7 +21,7 @@ l = { 'Bugatti' : Bugatti, 'Porshe' : Porshe, 'Lamborgini' : Lamborgini, 'Koenig
 
 gear = ('Neutral', 'First', 'Second', 'Third', 'Fourth', 'Fifth')
 
-#Function to print all Cars
+#Function to print all Cars along with details
 def print_Car():
     for k,v in l.items():
         print("Brand : ",k)
@@ -34,11 +34,11 @@ def gear_Ratio( speed ):
     gears = [ 0, int(0.4*speed), int((0.4+.24)*speed), int((.4+.24+.144)*speed), int((.4+.24+.144+.0864)*speed), speed]
     return gears
 
-#Function of find the desired car
+#Function to find the desired car
 def car_Model():
 
-    brand = input("Press car Brand : ")
-    model = input("Press car Model : ")
+    brand = input("Choice a car Brand : ")
+    model = input("Choice a car Model : ")
     
     f = False
     for k,v in l.items():
@@ -59,6 +59,7 @@ def car_Model():
 
 ch = input("Press any key ( except E ) to start the game : ").lower()
 print(ch)
+
 while ch != 'e':
     
     print_Car()
@@ -85,6 +86,7 @@ while ch != 'e':
     while inCar == 'y':
         incSpeed = 0
         decSpeed = 0
+
         if curGear != 0:
             incSpeed = (gearSpeed[curGear] - gearSpeed[curGear - 1]) //3
             decSpeed = incSpeed
@@ -124,7 +126,6 @@ while ch != 'e':
         print("Gear : ",gear[curGear])
         state = input("Press control button : ").lower()
         
-    
     print("Press any key to choice a car again, or")
     print("Press E to exit game")
     ch = input("Press choice : ").lower()
