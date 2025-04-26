@@ -17,14 +17,6 @@ Koenigsegg = { 1 : {'Name' : 'Jesko', 'Engine' : '5.0L V8', 'Top_Speed(in mph)' 
 
 list_Of_Brands = { 'Bugatti' : Bugatti, 'Porshe' : Porshe, 'Lamborgini' : Lamborgini, 'Koenigsegg' : Koenigsegg}
 
-#Function to print all Cars along with details
-def print_Car(**l):
-    for k,v in l.items():
-        print("Brand : ",k)
-        for j in v.values():
-            print(j)
-        print()
-
 #Function to calculate max speed at each gears
 def gear_Ratio( speed ):
     gears = [ 0, int(0.4*speed), int((0.4+.24)*speed), int((.4+.24+.144)*speed), int((.4+.24+.144+.0864)*speed), speed]

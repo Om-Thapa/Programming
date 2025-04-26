@@ -8,6 +8,20 @@ Koenigsegg = carDetails.Koenigsegg
 
 l = carDetails.list_Of_Brands
 
+class Print_Cars:
+    def __init__(self, carsList):
+        self.l = carsList
+
+    #Function to print all Cars along with details
+    def print_Car(self):
+        for k,v in self.l.items():
+            print("Brand : ",k)
+            for j in v.values():
+                print(j)
+            print()
+
+carObject = Print_Cars(l)
+
 gear = ('Neutral', 'First', 'Second', 'Third', 'Fourth', 'Fifth')
 
 ch = input("Press any key ( except E ) to start the game : ").lower()
@@ -15,7 +29,7 @@ print(ch)
 
 while ch != 'e':
     # Print car details
-    carDetails.print_Car(**l)
+    carObject.print_Car()
     
     car = None
     while not car:
