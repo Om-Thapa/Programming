@@ -1,0 +1,31 @@
+# Matplotlib
+Matplotlib is a fundamental plotting library in Python used for creating 
+static, interactive, and animated visualizations. It provides full control 
+over plots (lines, markers, colors, axes, etc.) and is highly customizable.  
+
+Advantages:  
+- Very flexible, supports a wide range of plots.  
+- Fine-grained control over every plot element.  
+- Works well with NumPy and Pandas.  
+- Widely used and well-documented.  
+
+Disadvantages:  
+- Syntax can be verbose for simple plots.  
+- Styling requires more manual work.  
+- Default aesthetics are plain compared to modern libraries.  
+
+# Seaborn
+Seaborn is a statistical data visualization library built on top of Matplotlib.  
+It provides high-level functions for attractive and informative statistical graphics.  
+Seaborn focuses on simplicity and better default styling, especially with Pandas DataFrames.  
+
+Advantages:  
+- Beautiful default styles with minimal code.  
+- Built-in support for statistical plots (box, violin, heatmap, etc.).  
+- Works seamlessly with Pandas DataFrames.  
+- Great for quick exploratory data analysis (EDA).  
+
+Disadvantages:  
+- Less flexible than Matplotlib for custom plots.  
+- Depends on Matplotlib, so advanced customization may still require Matplotlib commands.  
+- Slightly slower for very large datasets.  
