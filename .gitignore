@@ -4,3 +4,4 @@ code.py
 code.ipynb
 .vscode
 _pycache
+*.exe
